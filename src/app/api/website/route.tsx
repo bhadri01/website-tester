@@ -3,9 +3,9 @@ import DB from "@/lib/db";
 import WebModels from "@/models/website";
 import { ErrorRespose } from "@/lib/ErrorResponse";
 import { join } from "path";
-import { stat, mkdir, writeFile } from "fs/promises";
+import { writeFile } from "fs/promises";
 
-type WebModelsType = {
+export type WebModelsType = {
   logo: String;
   brandName: String;
   website: String;
@@ -42,14 +42,15 @@ export async function POST(request: NextRequest) {
     const buffer = Buffer.from(await file.arrayBuffer());
     const relativeUploadDir = `/brandlogo`;
     const uploadDir = join(process.cwd(), "public", relativeUploadDir);
-    await writeFile(`${uploadDir}/${file?.name}`, buffer);
+    const testdata = new Date().getTime()
+    await writeFile(`${uploadDir}/${testdata}_${file?.name}`, buffer);
 
     const websiteData: WebModelsType = {
       brandName: formData.get("brandName"),
       domainExpiry: formData.get("domainExpiry"),
       domainPurchase: formData.get("domainPurchase"),
       domainService: formData.get("domainService"),
-      logo: `/brandlogo/${file?.name}`,
+      logo: `/brandlogo/${testdata}_${file?.name}`,
       website: formData.get("website"),
     };
     await DB();

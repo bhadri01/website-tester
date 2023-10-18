@@ -10,7 +10,7 @@ const DB = async () => {
       console.log("already Connected to mongodb");
     }
   } catch (error: any) {
-    throw error.message;
+    throw error;
   }
 };
 
