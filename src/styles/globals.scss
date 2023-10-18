@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #000021;
+    --secondary: #ad69e9;
+    --color: #dfdfdf;
+}
+
+body {
+    color: var(--color);
+}
+
+.container {
+    width: 100%;
+    height: min(100vh);
+
+    header {
+        background-color: var(--primary);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+        color: var(--color);
+
+        .header-image {
+            object-fit: contain;
+        }
+
+        i {
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+    }
+
+    .dashboard {
+        .brudcamp {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 24px;
+
+            i {
+                transform: scale(1.5);
+                cursor: pointer;
+            }
+
+            b {
+                margin-top: 4px;
+                text-transform: capitalize;
+            }
+        }
+
+        .website-box {
+            width: 100%;
+            padding: 16px 32px 0 16px;
+
+            .website-card {
+                width: 100%;
+                height: 200px;
+
+                .website-header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    i {
+                        transform: scale(2);
+                        cursor: pointer;
+                    }
+
+                    b {
+                        font-size: 24px;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.add-website {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00002130;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+
+
+    h3 {
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .add-card {
+        color: var(--primary);
+        background-color: var(--color);
+        padding: 24px;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     width: 200px;
+        //     height: 200px;
+        //     background-color: #ad69e9;
+        //     border-radius: 50%;
+        //     top: -50px;
+        //     left: -50px;
+        // }
+
+    }
+
+    .form-box {
+        display: flex;
+        flex-direction: column;
+        margin: 8px 0;
+        width: 100%;
+
+        label {
+            text-transform: capitalize;
+        }
+    }
+
+    .button-website {
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.website-card-container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+
+    .website-added-card {
+        background-color: #fff;
+        padding: 24px;
+        box-shadow: 0 0 16px #00000030;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-direction: column;
+        border-radius: 8px;
+        width: 200px;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 16px #00000050;
+        }
+
+
+        img {
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .web-service {
+            background-color: #ad69e9;
+            padding: 0 8px;
+            border-radius: 20px;
+            color: var(--color);
+            text-transform: capitalize;
+            font-weight: 900;
+        }
+
+        .brand-name {
+            border: 1px dashed gray;
+            padding: 0 8px;
+            border-radius: 20px;
+        }
+
+
+        .exp-date {
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--color);
+            background-color: #023021;
+        }
+
+        .webaction-icons {
+            width: 100%;
+            margin-top: 8px;
+            border-top: 1px solid var(--primary);
+            display: flex;
+            gap: 8px;
+            padding-top: 8px;
+            justify-content: space-around;
+
+            i {
+                transform: scale(1.1);
+                cursor: pointer;
+            }
+        }
+    }
+}
